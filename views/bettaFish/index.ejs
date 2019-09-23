@@ -1,0 +1,24 @@
+<%include ../partials/header%>
+<div class="container">
+    <header class="jumbotron">
+        <h1>Welcome to Betta Fish page!</h1>
+        <a class="btn btn-primary btn-lg" href="/bettaFish/new">Add Betta Fish</a>
+    </header>
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% fishData.forEach(function(betta){%>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h4><strong><%=betta.name%></strong> - <em><%=betta.color%></em></h4>
+                    </div>
+                    <img src="<%=betta.image%>">
+                    <br>
+                    <p>
+                        <a href="/bettaFish/<%=betta._id%>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% })%>
+    </div>
+<%include ../partials/footer%>
+</div>
